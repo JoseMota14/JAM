@@ -1,0 +1,236 @@
+# .gitignore for .NET 6 with Blazor
+
+# Ignore Visual Studio files
+.vscode/
+.idea/
+
+# Ignore user-specific files and directories
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Ignore build output
+/bin/
+/obj/
+/Dockerfile
+/*.zip
+
+# Ignore NuGet packages
+/packages/
+
+# Ignore project-specific files and directories
+/wwwroot/dist/
+/wwwroot/_content/
+/_bin/
+/_precompile/
+/wwwroot/_content/Blazor.Extensions.Logging
+/wwwroot/_content/Blazor.Extensions.SignalR
+/wwwroot/_content/Blazor.Extensions.Storage
+/wwwroot/_content/Blazor.Extensions.Timer
+/wwwroot/_content/Blazor.Extensions.Vue
+
+# Ignore .NET Core artifacts
+/.NETCORE/
+
+# Ignore generated files
+/wwwroot/*.js
+/wwwroot/*.js.map
+/wwwroot/*.css
+/wwwroot/*.css.map
+
+# Ignore log files
+*.log
+
+# Ignore user secrets
+/appsettings.Development.json
+
+# Ignore Visual Studio Code workspace settings
+.vscode/settings.json
+
+# Ignore .DS_Store files on macOS
+.DS_Store
+
+# Ignore Rider files
+.idea/
+
+# Ignore JetBrains Rider
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/shelf
+
+# Ignore Rider-specific files
+.idea/
+
+# Ignore Rider settings
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/shelf
+.idea/WebServers.xml
+.idea/.name
+.idea/.gitignore
+.idea/.ideaName
+.idea/caches
+.idea/index
+.idea/encodings.xml
+.idea/uiDesigner.xml
+.idea/recentProjects.xml
+.idea/tasks.xml
+.idea/.ideaModule
+.idea/.ideaModuleName
+
+# Ignore Rider backups and temporary files
+.idea/backups/
+.idea/inspectionProfiles
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/copyright/profiles/*
+.idea/diagnostic.xml
+.idea/jira/*/
+.idea/vcsHistory/
+.idea/libraries/
+.idea/gradle.xml
+.idea/codeStyles/
+.idea/codeStyleSettings.xml
+.idea/encodings.xml
+.idea/scopes/
+.idea/scope_settings.xml
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/ant.xml
+.idea/safe_delete
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/datasources/
+.idea/xdebug.xml
+.idea/dataSources.ids
+.idea/remote-servers.xml
+.idea/misc.xml
+.idea/libraries/rootModel.xml
+.idea/shelf/
+.idea/php.xml
+.idea/remote-servers/
+.idea/coverage/
+.idea/inspectionProfiles/settings.xml
+.idea/remote-mappings.xml
+.idea/inspection/
+.idea/runConfigurations/
+.idea/plugins/
+.idea/.php.xml
+.idea/workspaceFile.xml
+.idea/vcs_file_types
+.idea/vcs_colors.xml
+.idea/coverage/.dump
+.idea/workspace.xml
+.idea/index.inf
+.idea/repo/
+
+# Ignore Visual Studio Code workspace settings
+.vscode/settings.json
+
+# Ignore npm dependencies
+node_modules/
+
+# Ignore yarn dependencies
+yarn-error.log
+yarn.lock
+
+# Ignore macOS .DS_Store files
+.DS_Store
+
+# Ignore Windows thumbnail files
+Thumbs.db
+Thumbs.db:encryptable
+
+# Ignore user-specific Visual Studio files
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Ignore user-specific Rider files
+.idea/codeStyles/
+.idea/codeStyleSettings.xml
+.idea/encodings.xml
+.idea/inspection/
+.idea/runConfigurations/
+.idea/caches/
+.idea/localHistory/
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/shelf/
+.idea/workspace.xml
+
+# Ignore Rider backup and temporary files
+.idea/inspectionProfiles
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/copyright/profiles/*
+.idea/diagnostic.xml
+.idea/jira/*/
+.idea/vcsHistory/
+.idea/libraries/
+.idea/gradle.xml
+.idea/codeStyles/
+.idea/codeStyleSettings.xml
+.idea/encodings.xml
+.idea/scopes/
+.idea/scope_settings.xml
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/ant.xml
+.idea/safe_delete
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/datasources/
+.idea/xdebug.xml
+.idea/dataSources.ids
+.idea/remote-servers.xml
+.idea/misc.xml
+.idea/libraries/rootModel.xml
+.idea/shelf/
+.idea/php.xml
+.idea/remote-servers/
+.idea/coverage/
+.idea/inspectionProfiles/settings.xml
+.idea/remote-mappings.xml
+.idea/inspection/
+.idea/runConfigurations/
+.idea/plugins/
+.idea/.php.xml
+.idea/workspaceFile.xml
+.idea/vcs_file_types
+.idea/vcs_colors.xml
+.idea/coverage/.dump
+.idea/workspace.xml
+.idea/index.inf
+.idea/repo/
+.idea/.editorconfig
+.idea/gradle.settings.xml
+.idea/.ideamodule
+.idea/.ideamodulei
+.idea/assetSize/.idea/.assetSize.i
+.idea/cache/.idea/.cache.i
+.idea/codeWithMeSettings.xml
+.idea/dbNavigator.settings.xml
+.idea/inspectionX.xml
+.idea/liveTemplates.xml
+.idea/scannerProfile/Default.xml
+.idea/scannerProfile/InspectionTool.xml
+.idea/servlets.xml
+.idea/uiDesigner.xml
+.idea/yaml
+.vs/
