@@ -11,7 +11,6 @@ namespace JamServer.Application.Interfaces
     {
         Task<IEnumerable<AthleteDTO>> GetAthletes();
         Task<AthleteDTO> GetById(int? id);
-        Task<AthleteDTO> GetAthleClothes(int? id);
         Task Add(AthleteDTO athleteDTO);
         Task Update(AthleteDTO athleteDTO);
         Task Remove(int? id);

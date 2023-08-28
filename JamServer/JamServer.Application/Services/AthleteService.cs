@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using JamServer.Application.Athletes.Commands;
+using JamServer.Application.Athletes.Queries;
 using JamServer.Application.DTOs;
 using JamServer.Application.Interfaces;
 using JamServer.Domain.Entities;
 using JamServer.Domain.Interfaces;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,50 +14,62 @@ using System.Threading.Tasks;
 
 namespace JamServer.Application.Services
 {
-    internal class AthleteService : IAthleteService
+    public class AthleteService : IAthleteService
     {
-        private IAthleteRepository _athleteRepository;
+        private IMediator _mediator;
         private readonly IMapper _mapper;
-        public AthleteService(IAthleteRepository athleteRepository, IMapper mapper)
+        public AthleteService(IMediator mediator, IMapper mapper)
         {
-            _athleteRepository = athleteRepository;
+            _mediator = mediator;
             _mapper = mapper;
         }
 
         public async Task<IEnumerable<AthleteDTO>> GetAthletes()
         {
-            var clothes = await _athleteRepository.GetAthletes();
-            return _mapper.Map<IEnumerable<AthleteDTO>>(clothes);
+            var athleteQuery = new GetAthletesQuery();
+
+            if(athleteQuery == null)
+            {
+                throw new Exception("Cant be null");
+            }
+
+            var result = await _mediator.Send(athleteQuery);
+            return _mapper.Map<IEnumerable<AthleteDTO>>(result);
         }
 
         public async Task<AthleteDTO> GetById(int? id)
         {
-            var clothes = await _athleteRepository.GetById(id);
-            return _mapper.Map<AthleteDTO>(clothes);
+            var athleteQuery = new GetAthleteByIdQuery(id.Value);
+
+            if (athleteQuery == null)
+            {
+                throw new Exception("Cant be null");
+            }
+            var result = await _mediator.Send(athleteQuery);
+            return _mapper.Map<AthleteDTO>(result);
         }
 
         public async Task Add(AthleteDTO athleteDTO)
         {
-            var athlete = _mapper.Map<Athlete>(athleteDTO);
-            await _athleteRepository.Create(athlete);
+            var athleteCommand = _mapper.Map<AthleteCreateCommand>(athleteDTO);
+            await _mediator.Send(athleteCommand);
         }
 
         public async Task Update(AthleteDTO athleteDTO)
         {
-            var athlete = _mapper.Map<Athlete>(athleteDTO);
-            await _athleteRepository.Update(athlete);
+            var athleteCommand = _mapper.Map<AthleteUpdateCommand>(athleteDTO);
+            await _mediator.Send(athleteCommand);
         }
 
         public async Task Remove(int? id)
         {
-            var athlete = _athleteRepository.GetById(id).Result;
-            await _athleteRepository.Create(athlete);
+            var athleteQuery = new AthleteRemoveCommand(id.Value);
+            if (athleteQuery == null)
+            {
+                throw new Exception("Cant be null");
+            }
+             await _mediator.Send(athleteQuery);
         }
 
-        public async Task<AthleteDTO> GetAthleClothes(int? id)
-        {
-            var athlete = await _athleteRepository.GetAthleteClothes(id);
-            return _mapper.Map<AthleteDTO>(athlete);
-        }
     }
 }

@@ -1,6 +1,10 @@
-﻿using JamServer.Domain.Interfaces;
+﻿using JamServer.Application.Interfaces;
+using JamServer.Application.Mappings;
+using JamServer.Application.Services;
+using JamServer.Domain.Interfaces;
 using JamServer.Infra.Data.Context;
 using JamServer.Infra.Data.Repos;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +26,12 @@ namespace JamServer.Infra.IoC
 
             services.AddScoped<IClothesRepository, ClothesRepository>();
             services.AddScoped<IAthleteRepository, AthleteRepository>();
+
+            services.AddScoped<IClothesService, ClothesService>();
+            services.AddScoped<IAthleteService, AthleteService>();
+
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
+            services.AddMediatR(AppDomain.CurrentDomain.Load("JamServer.Application"));
 
             return services;
         }
